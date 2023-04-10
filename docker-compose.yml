@@ -1,0 +1,64 @@
+version: '3.8'
+
+services:
+  libmamba_cartopy:
+    build:
+      dockerfile: libmamba.Dockerfile	
+      args:
+        ENV_FILE: './environments/cartopy_env.yml'
+
+  miniconda_cartopy:
+    build:
+      dockerfile: miniconda.Dockerfile	
+      args:
+        ENV_FILE: './environments/cartopy_env.yml'
+
+  micromamba_cartopy:
+    build:
+      dockerfile: micromamba.Dockerfile	
+      args:
+        ENV_FILE: './environments/cartopy_env.yml'
+
+  mamba_cartopy:
+    build:
+      dockerfile: mamba.Dockerfile	
+      args:
+        ENV_FILE: './environments/cartopy_env.yml'
+
+
+  libmamba_pygrib:
+    build:
+      dockerfile: libmamba.Dockerfile	
+      args:
+        ENV_FILE: './environments/pygrib_env.yml'
+
+  miniconda_pygrib:
+    build:
+      dockerfile: miniconda.Dockerfile	
+      args:
+        ENV_FILE: './environments/pygrib_env.yml'
+
+  micromamba_pygrib:
+    build:
+      dockerfile: micromamba.Dockerfile	
+      args:
+        ENV_FILE: './environments/pygrib_env.yml'
+
+  mamba_pygrib:
+    build:
+      dockerfile: mamba.Dockerfile	
+      args:
+        ENV_FILE: './environments/pygrib_env.yml'
+
+  libmamba_geoips:
+    build:
+      dockerfile: libmamba.Dockerfile	
+      args:
+        ENV_FILE: './environments/geoips_env.yml'
+  
+  micromamba_geoips:
+    build:
+      dockerfile: micromamba.Dockerfile	
+      args:
+        ENV_FILE: './environments/geoips_env.yml'
+

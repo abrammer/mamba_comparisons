@@ -1,0 +1,29 @@
+name: geoips_dev
+channels:
+  - conda-forge
+dependencies:
+  - bandit
+  - cartopy
+  - ephem
+  - flake8
+  - h5py
+  - ipython
+  - isodate
+  - matplotlib
+  - netcdf4
+  - numexpr
+  - numpy
+  - psutil
+  - pyhdf
+  - pylint
+  - pyorbital
+  - pyresample
+  - pyshp
+  - pyyaml
+  - rasterio
+  - satpy
+  - scikit-image
+  - scipy
+  - shapely
+  - sphinx
+  - xarray

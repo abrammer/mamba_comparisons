@@ -1,0 +1,19 @@
+name: pygrib_env
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.9
+  - yapf
+  - numpy
+  - scipy
+  - toml
+  - pyyaml
+  - matplotlib
+  - pandas
+  - pip
+  - pygrib
+  - xarray
+  - netcdf4
+  - pylint
+  - rope
