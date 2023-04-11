@@ -14,13 +14,14 @@ jobs:
       fail-fast: false
       matrix:
         version: [mamba, micromamba, libmamba, miniconda]
-        build_env: [wtf, ] #pygrib, cartopy, geoips, oco, gccjob, multichannel]
+        build_env: [pygrib, cartopy, geoips, oco, gccjob, multichannel]
         
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: docker compose build ${{ matrix.version }}_${{ matrix.build_env }} | tee log
-   
+      options: --cpus 2
+
     - name: try to grep the output
       run: grep "DONE" log >>  ${{ matrix.version }}_${{ matrix.build_env }}.txt
     
