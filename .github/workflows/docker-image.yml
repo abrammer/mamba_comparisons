@@ -12,8 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [mamba, micromamba]
-        build_env: [pygrib, cartopy]
+        version: [mamba, micromamba, libmamba, miniconda]
+        build_env: [pygrib, cartopy, geoips]
         
     steps:
     - uses: actions/checkout@v3
