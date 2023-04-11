@@ -73,3 +73,75 @@ services:
       dockerfile: mamba.Dockerfile	
       args:
         ENV_FILE: './environments/geoips_env.yml'
+
+  libmamba_oco:
+    build:
+      dockerfile: libmamba.Dockerfile	
+      args:
+        ENV_FILE: './environments/oco_env.yml'
+  
+  micromamba_oco:
+    build:
+      dockerfile: micromamba.Dockerfile	
+      args:
+        ENV_FILE: './environments/oco_env.yml'
+
+  miniconda_oco:
+    build:
+      dockerfile: miniconda.Dockerfile	
+      args:
+        ENV_FILE: './environments/oco_env.yml'
+
+  mamba_oco:
+    build:
+      dockerfile: mamba.Dockerfile	
+      args:
+        ENV_FILE: './environments/oco_env.yml'
+
+  libmamba_multichannel:
+    build:
+      dockerfile: libmamba.Dockerfile	
+      args:
+        ENV_FILE: './environments/multichannel_env.yml'
+  
+  micromamba_multichannel:
+    build:
+      dockerfile: micromamba.Dockerfile	
+      args:
+        ENV_FILE: './environments/multichannel_env.yml'
+
+  miniconda_multichannel:
+    build:
+      dockerfile: miniconda.Dockerfile	
+      args:
+        ENV_FILE: './environments/multichannel_env.yml'
+
+  mamba_multichannel:
+    build:
+      dockerfile: mamba.Dockerfile	
+      args:
+        ENV_FILE: './environments/multichannel_env.yml'
+
+  libmamba_gccjob:
+    build:
+      dockerfile: libmamba.Dockerfile	
+      args:
+        ENV_FILE: './environments/gccjob_env.yml'
+  
+  micromamba_gccjob:
+    build:
+      dockerfile: micromamba.Dockerfile	
+      args:
+        ENV_FILE: './environments/gccjob_env.yml'
+
+  miniconda_gccjob:
+    build:
+      dockerfile: miniconda.Dockerfile	
+      args:
+        ENV_FILE: './environments/gccjob_env.yml'
+
+  mamba_gccjob:
+    build:
+      dockerfile: mamba.Dockerfile	
+      args:
+        ENV_FILE: './environments/gccjob_env.yml'

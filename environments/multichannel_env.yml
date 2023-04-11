@@ -1,0 +1,8 @@
+name: multichannel
+channels:
+  - anaconda
+  - conda-forge
+dependencies:
+  - pyyaml 
+  - jinja2 
+  - h5py

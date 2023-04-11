@@ -1,0 +1,12 @@
+name: gccjob
+channels:
+  - conda-forge
+dependencies:
+  - python=3
+  - numpy
+  - netcdf4
+  - scipy
+  - gcc
+  - pyresample
+  - pyhdf
+  - joblib
