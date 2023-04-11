@@ -145,3 +145,27 @@ services:
       dockerfile: mamba.Dockerfile	
       args:
         ENV_FILE: './environments/gccjob_env.yml'
+
+  libmamba_wtf:
+    build:
+      dockerfile: libmamba.Dockerfile	
+      args:
+        ENV_FILE: './environments/wtf_env.yml'
+  
+  micromamba_wtf:
+    build:
+      dockerfile: micromamba.Dockerfile	
+      args:
+        ENV_FILE: './environments/wtf_env.yml'
+
+  miniconda_wtf:
+    build:
+      dockerfile: miniconda.Dockerfile	
+      args:
+        ENV_FILE: './environments/wtf_env.yml'
+
+  mamba_wtf:
+    build:
+      dockerfile: mamba.Dockerfile	
+      args:
+        ENV_FILE: './environments/wtf_env.yml'
