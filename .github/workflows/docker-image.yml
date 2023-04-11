@@ -15,4 +15,16 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker compose build micromamba_cartopy
+      run: docker compose build micromamba_cartopy >> log
+   
+    - name: try to grep the output
+      run: grep "#8 DONE" log >> timing
+    
+    - name: echo the output
+      run: cat timing
+
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.1.2
+      with:
+        path: timing
+        
