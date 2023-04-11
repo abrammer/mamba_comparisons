@@ -11,7 +11,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
         version: [mamba, micromamba, libmamba, miniconda]
         build_env: [wtf, ] #pygrib, cartopy, geoips, oco, gccjob, multichannel]
@@ -29,4 +29,3 @@ jobs:
       uses: actions/upload-artifact@v3.1.2
       with:
         path: "*.txt"
-        
