@@ -62,3 +62,14 @@ services:
       args:
         ENV_FILE: './environments/geoips_env.yml'
 
+  miniconda_geoips:
+    build:
+      dockerfile: miniconda.Dockerfile	
+      args:
+        ENV_FILE: './environments/geoips_env.yml'
+
+  mamba_geoips:
+    build:
+      dockerfile: mamba.Dockerfile	
+      args:
+        ENV_FILE: './environments/geoips_env.yml'
