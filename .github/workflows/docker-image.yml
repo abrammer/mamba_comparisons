@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         version: [mamba, micromamba, libmamba, miniconda]
-        build_env: [pygrib, cartopy, geoips]
+        build_env: [pygrib, cartopy, geoips, oco, gccjob, multichannel]
         
     steps:
     - uses: actions/checkout@v3
