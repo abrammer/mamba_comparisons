@@ -14,7 +14,7 @@ jobs:
       fail-fast: false
       matrix:
         version: [mamba, ] # micromamba, libmamba, miniconda]
-        build_env: [oco, gccjob, multichannel, ] #pygrib, cartopy, geoips, ]
+        build_env: [gccjob, multichannel, ] #oco, pygrib, cartopy, geoips, ]
         
     steps:
     - uses: actions/checkout@v3
@@ -53,7 +53,7 @@ jobs:
         shell: bash
 
       - name: run plotting
-        run: python plot_results.pd/plot_timings.py
+        run: python plot_results.pd/plot_timing.py
         shell: bash
 
       - name: Upload a Build Artifact
