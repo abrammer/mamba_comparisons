@@ -13,8 +13,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        version: [mamba, micromamba, libmamba, miniconda]
-        build_env: [pygrib, cartopy, geoips, oco, gccjob, multichannel]
+        version: [mamba, ] # micromamba, libmamba, miniconda]
+        build_env: [oco, gccjob, multichannel, ] #pygrib, cartopy, geoips, ]
         
     steps:
     - uses: actions/checkout@v3
@@ -29,3 +29,24 @@ jobs:
       uses: actions/upload-artifact@v3.1.2
       with:
         path: "*.txt"
+
+  plot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/download-artifact@v3
+        with:
+          path: artifacts
+          
+      - name: Display structure of downloaded files
+        run: ls -R
+        working-directory: artifacts
+      
+      - name: Setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'  
+
+      - name: Install Dependencies
+        run: pip install -r plot_results.pd/requirements.txt
+        shell: bash
