@@ -6,6 +6,7 @@ artifact = pathlib.Path('artifact')
 files = artifact.glob('*.txt')
 
 def extract_install_time(path):
+    print(path)
     with path.open() as f:
         lines = f.readlines()
     penult_line = lines[-2]
@@ -13,6 +14,8 @@ def extract_install_time(path):
 
 data = {path.name.replace('.txt',''): extract_install_time(path) for path in files}
 df = pd.Series(data)
+print(df)
+
 df.index = df.index.str.split('_', expand=True)
 df = df.reset_index()
 
@@ -30,7 +33,7 @@ for env, group in df.groupby('level_1'):
     group /= group.loc['miniconda']
     group.plot.barh(ax=ax, rot=45, fontsize=9, title=env, legend=False,)
     ax.set_xlabel('seconds')
-    ax.bar_label(ax.containers[0], fmt="%.0f")
+    ax.bar_label(ax.containers[0], fmt="%.2f")
     fig.savefig(f'{env}_timings_normalized.png')
 
 
