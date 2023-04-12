@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import pathlib 
 
-artifact = pathlib.Path('artifact')
+artifact = pathlib.Path('artifacts/artifact')
 files = artifact.glob('*.txt')
 
 def extract_install_time(path):
