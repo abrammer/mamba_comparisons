@@ -50,3 +50,13 @@ jobs:
       - name: Install Dependencies
         run: pip install -r plot_results.pd/requirements.txt
         shell: bash
+
+      - name: run plotting
+        run: python plot_results.pd/plot_timings.py
+        shell: bash
+
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: timing_plots
+          path: "*.png"

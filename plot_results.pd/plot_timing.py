@@ -1,15 +1,17 @@
-from zipfile import ZipFile
 import matplotlib.pyplot as plt
 import pandas as pd
+import pathlib 
 
-archive = ZipFile('artifact.zip', 'r')
-files = archive.namelist()
+artifact = pathlib.Path('artifact')
+files = artifact.glob('*.txt')
 
-def extract_install_time(lines):
-    penult_line = lines.splitlines()[-2]
+def extract_install_time(path):
+    with path.open() as f:
+        lines = f.readlines()
+    penult_line = lines[-2]
     return float(penult_line.split()[-1][:-1])
 
-data = {name.replace('.txt',''): extract_install_time(archive.read(name)) for name in archive.namelist()}
+data = {path.name.replace('.txt',''): extract_install_time(path) for path in files}
 df = pd.Series(data)
 df.index = df.index.str.split('_', expand=True)
 df = df.reset_index()
