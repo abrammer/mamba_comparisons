@@ -14,7 +14,7 @@ jobs:
       fail-fast: false
       matrix:
         version: [mamba, micromamba, libmamba, miniconda]
-        build_env: [gccjob, multichannel, ] # oco, pygrib, cartopy, geoips, ]
+        build_env: [gccjob, multichannel, oco, pygrib, cartopy, geoips, ]
         
     steps:
     - uses: actions/checkout@v3
