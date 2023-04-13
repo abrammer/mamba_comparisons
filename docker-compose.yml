@@ -3,169 +3,169 @@ version: '3.8'
 services:
   libmamba_cartopy:
     build:
-      dockerfile: libmamba.Dockerfile	
+      dockerfile: libmamba.Dockerfile
       args:
         ENV_FILE: './environments/cartopy_env.yml'
 
   miniconda_cartopy:
     build:
-      dockerfile: miniconda.Dockerfile	
+      dockerfile: miniconda.Dockerfile
       args:
         ENV_FILE: './environments/cartopy_env.yml'
 
   micromamba_cartopy:
     build:
-      dockerfile: micromamba.Dockerfile	
+      dockerfile: micromamba.Dockerfile
       args:
         ENV_FILE: './environments/cartopy_env.yml'
 
   mamba_cartopy:
     build:
-      dockerfile: mamba.Dockerfile	
+      dockerfile: mamba.Dockerfile
       args:
         ENV_FILE: './environments/cartopy_env.yml'
 
 
   libmamba_pygrib:
     build:
-      dockerfile: libmamba.Dockerfile	
+      dockerfile: libmamba.Dockerfile
       args:
         ENV_FILE: './environments/pygrib_env.yml'
 
   miniconda_pygrib:
     build:
-      dockerfile: miniconda.Dockerfile	
+      dockerfile: miniconda.Dockerfile
       args:
         ENV_FILE: './environments/pygrib_env.yml'
 
   micromamba_pygrib:
     build:
-      dockerfile: micromamba.Dockerfile	
+      dockerfile: micromamba.Dockerfile
       args:
         ENV_FILE: './environments/pygrib_env.yml'
 
   mamba_pygrib:
     build:
-      dockerfile: mamba.Dockerfile	
+      dockerfile: mamba.Dockerfile
       args:
         ENV_FILE: './environments/pygrib_env.yml'
 
   libmamba_geoips:
     build:
-      dockerfile: libmamba.Dockerfile	
+      dockerfile: libmamba.Dockerfile
       args:
         ENV_FILE: './environments/geoips_env.yml'
   
   micromamba_geoips:
     build:
-      dockerfile: micromamba.Dockerfile	
+      dockerfile: micromamba.Dockerfile
       args:
         ENV_FILE: './environments/geoips_env.yml'
 
   miniconda_geoips:
     build:
-      dockerfile: miniconda.Dockerfile	
+      dockerfile: miniconda.Dockerfile
       args:
         ENV_FILE: './environments/geoips_env.yml'
 
   mamba_geoips:
     build:
-      dockerfile: mamba.Dockerfile	
+      dockerfile: mamba.Dockerfile
       args:
         ENV_FILE: './environments/geoips_env.yml'
 
   libmamba_oco:
     build:
-      dockerfile: libmamba.Dockerfile	
+      dockerfile: libmamba.Dockerfile
       args:
         ENV_FILE: './environments/oco_env.yml'
   
   micromamba_oco:
     build:
-      dockerfile: micromamba.Dockerfile	
+      dockerfile: micromamba.Dockerfile
       args:
         ENV_FILE: './environments/oco_env.yml'
 
   miniconda_oco:
     build:
-      dockerfile: miniconda.Dockerfile	
+      dockerfile: miniconda.Dockerfile
       args:
         ENV_FILE: './environments/oco_env.yml'
 
   mamba_oco:
     build:
-      dockerfile: mamba.Dockerfile	
+      dockerfile: mamba.Dockerfile
       args:
         ENV_FILE: './environments/oco_env.yml'
 
   libmamba_multichannel:
     build:
-      dockerfile: libmamba.Dockerfile	
+      dockerfile: libmamba.Dockerfile
       args:
         ENV_FILE: './environments/multichannel_env.yml'
   
   micromamba_multichannel:
     build:
-      dockerfile: micromamba.Dockerfile	
+      dockerfile: micromamba.Dockerfile
       args:
         ENV_FILE: './environments/multichannel_env.yml'
 
   miniconda_multichannel:
     build:
-      dockerfile: miniconda.Dockerfile	
+      dockerfile: miniconda.Dockerfile
       args:
         ENV_FILE: './environments/multichannel_env.yml'
 
   mamba_multichannel:
     build:
-      dockerfile: mamba.Dockerfile	
+      dockerfile: mamba.Dockerfile
       args:
         ENV_FILE: './environments/multichannel_env.yml'
 
   libmamba_gccjob:
     build:
-      dockerfile: libmamba.Dockerfile	
+      dockerfile: libmamba.Dockerfile
       args:
         ENV_FILE: './environments/gccjob_env.yml'
   
   micromamba_gccjob:
     build:
-      dockerfile: micromamba.Dockerfile	
+      dockerfile: micromamba.Dockerfile
       args:
         ENV_FILE: './environments/gccjob_env.yml'
 
   miniconda_gccjob:
     build:
-      dockerfile: miniconda.Dockerfile	
+      dockerfile: miniconda.Dockerfile
       args:
         ENV_FILE: './environments/gccjob_env.yml'
 
   mamba_gccjob:
     build:
-      dockerfile: mamba.Dockerfile	
+      dockerfile: mamba.Dockerfile
       args:
         ENV_FILE: './environments/gccjob_env.yml'
 
   libmamba_wtf:
     build:
-      dockerfile: libmamba.Dockerfile	
+      dockerfile: libmamba.Dockerfile
       args:
         ENV_FILE: './environments/wtf_env.yml'
   
   micromamba_wtf:
     build:
-      dockerfile: micromamba.Dockerfile	
+      dockerfile: micromamba.Dockerfile
       args:
         ENV_FILE: './environments/wtf_env.yml'
 
   miniconda_wtf:
     build:
-      dockerfile: miniconda.Dockerfile	
+      dockerfile: miniconda.Dockerfile
       args:
         ENV_FILE: './environments/wtf_env.yml'
 
   mamba_wtf:
     build:
-      dockerfile: mamba.Dockerfile	
+      dockerfile: mamba.Dockerfile
       args:
         ENV_FILE: './environments/wtf_env.yml'

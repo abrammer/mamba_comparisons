@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import pandas as pd
-import pathlib 
+import pathlib
 
 artifact = pathlib.Path('artifacts/artifact')
 files = artifact.glob('*.txt')
@@ -22,6 +22,7 @@ df = df.reset_index()
 for env, group in df.groupby('level_1'):
     fig, ax  = plt.subplots()
     group = group.set_index('level_0')
+    group = group.sort_index()
     group.plot.barh(ax=ax, rot=45, fontsize=9, title=env, legend=False,)
     ax.set_xlabel('seconds')
     ax.bar_label(ax.containers[0], fmt="%.0f")
@@ -31,6 +32,7 @@ for env, group in df.groupby('level_1'):
     fig, ax  = plt.subplots()
     group = group.set_index('level_0').drop('level_1', axis='columns')
     group /= group.loc['miniconda']
+    group = group.sort_index()
     group.plot.barh(ax=ax, rot=45, fontsize=9, title=env, legend=False,)
     ax.set_xlabel('seconds')
     ax.bar_label(ax.containers[0], fmt="%.2f")
