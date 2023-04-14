@@ -1,0 +1,57 @@
+
+build:
+  parallel:
+    matrix:
+      - version: [mamba, micromamba, libmamba, miniconda]
+        build_env: [gccjob, multichannel, oco, pygrib, cartopy, geoips, ]
+  image:
+    name: gcr.io/kaniko-project/executor:debug
+    entrypoint: [""]
+  script:
+    - mkdir -p /kaniko/.docker
+    - /kaniko/executor --context $CI_PROJECT_DIR --dockerfile $CI_PROJECT_DIR/${version}.Dockerfile --build-arg "ENV_FILE=environments/${build_env}_env.yml" --no-push
+
+  #   - uses: actions/checkout@v3
+  #   - name: Build the Docker image
+  #     run: docker compose build ${{ matrix.version }}_${{ matrix.build_env }} | tee log
+
+  #   - name: try to grep the output
+  #     run: grep "DONE" log >>  ${{ matrix.version }}_${{ matrix.build_env }}.txt
+    
+
+  #   - name: Upload a Build Artifact
+  #     uses: actions/upload-artifact@v3.1.2
+  #     with:
+  #       path: "*.txt"
+
+  # plot:
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - uses: actions/download-artifact@v3
+  #       with:
+  #         path: artifacts
+          
+  #     - name: Display structure of downloaded files
+  #       run: ls -R
+  #       working-directory: artifacts
+      
+  #     - name: Setup python
+  #       uses: actions/setup-python@v4
+  #       with:
+  #         python-version: '3.10'  
+
+  #     - name: Install Dependencies
+  #       run: pip install -r plot_results.pd/requirements.txt
+  #       shell: bash
+
+  #     - name: run plotting
+  #       run: python plot_results.pd/plot_timing.py
+  #       shell: bash
+
+  #     - name: Upload a Build Artifact
+  #       uses: actions/upload-artifact@v3.1.2
+  #       with:
+  #         name: timing_plots
+  #         path: "*.png"
